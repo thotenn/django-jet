@@ -4,6 +4,7 @@ from six import python_2_unicode_compatible
 
 @python_2_unicode_compatible
 class TestModel(models.Model):
+    id = models.AutoField(primary_key=True)
     field1 = models.CharField(max_length=255)
     field2 = models.IntegerField()
 
@@ -13,6 +14,7 @@ class TestModel(models.Model):
 
 @python_2_unicode_compatible
 class RelatedToTestModel(models.Model):
+    id = models.AutoField(primary_key=True)
     field = models.ForeignKey(TestModel, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -21,6 +23,7 @@ class RelatedToTestModel(models.Model):
 
 @python_2_unicode_compatible
 class SearchableTestModel(models.Model):
+    id = models.AutoField(primary_key=True)
     field1 = models.CharField(max_length=255)
     field2 = models.IntegerField()
 

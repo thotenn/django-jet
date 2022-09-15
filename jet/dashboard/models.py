@@ -8,6 +8,7 @@ from jet.utils import LazyDateTimeEncoder
 
 @python_2_unicode_compatible
 class UserDashboardModule(models.Model):
+    id = models.AutoField(primary_key=True)
     title = models.CharField(verbose_name=_('Title'), max_length=255)
     module = models.CharField(verbose_name=_('module'), max_length=255)
     app_label = models.CharField(verbose_name=_('application name'), max_length=255, null=True, blank=True)

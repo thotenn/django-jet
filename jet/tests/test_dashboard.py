@@ -4,14 +4,14 @@ try:
 except ImportError: # Django 1.11
     from django.urls import reverse
 
-from django.test import TestCase, Client
+from django.test import SimpleTestCase, Client
 from jet.dashboard.dashboard import Dashboard
 from jet.dashboard.modules import LinkList, RecentActions
 from jet.dashboard.models import UserDashboardModule
 from jet.tests.dashboard import TestIndexDashboard
 
 
-class DashboardTestCase(TestCase):
+class DashboardTestCase(SimpleTestCase):
     class Request:
         def __init__(self, user):
             self.user = user
